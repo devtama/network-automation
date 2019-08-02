@@ -4,14 +4,17 @@ import sys
 import time
 from getpass import getpass
 
+print(sys.version)
+print(sys.executable)
+
 try:
-    print("Network Automation on Mikrotik")
-    print("==============================")
+    print("Network Automation")
+    print("==================")
 
     while True:
         try:
             ip = input("insert ip text: ")
-            r_ip = open(ip,"r").readlines()
+            r_ip = open(ip, "r").readlines()
             break
         except IOError:
             print("File not Found!")
@@ -24,7 +27,7 @@ try:
     ip_list_ok = []
     print("\n\ncek koneksi")
     for ip in ip_list:
-        response = os.system("\nping -c 4 {}".format(ip))
+        response = os.system("\nping {}".format(ip))
 
         if response == 0:
             print(f"\n{ip} is up!")
@@ -34,8 +37,8 @@ try:
 
     while True:
         try:
-            mikrotik = input("insert mikrotik config text: ")
-            r_mikrotik = open(mikrotik, "r").readlines()
+            router = input("insert router config text: ")
+            r_router = open(router, "r").readlines()
             break
         except IOError:
             print("File not found!")
@@ -50,7 +53,7 @@ try:
         ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy)
         ssh_client.connect(hostname=ip,username=username,password=password)
         print(f"login to {ip} successed!")
-        for config in r_mikrotik:
+        for config in r_router:
             ssh_client.exec_command(config)
             time.sleep(1)
         print(f"configuration to {ip} successed!")

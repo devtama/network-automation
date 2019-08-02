@@ -1,2 +1,0 @@
-ip service disable telnet,ftp,www,api-ssl,api
-system identity set name=automation
