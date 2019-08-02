@@ -1,0 +1,7 @@
+configure terminal
+interface fa0/1
+ip address 10.0.0.1 255.255.255.128
+ip domain-name testok.com
+do wr
+end
+exit
