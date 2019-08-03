@@ -2,9 +2,9 @@
 
 Lab programming python for network automation
 
-script by Piscki Pratama
-
-twitter https://www.twitter.com/pisckipratama
+contact Piscki Pratama
+- twitter https://www.twitter.com/pisckipratama
+- instagtam https://www.instagram.com/pisckiprtm
 
 ## Interactive Words
 - For join our labs, please mention or DM me on Twitter
